@@ -1,0 +1,50 @@
+.homeContainer {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background-image: url("https://wallpapercave.com/wp/wp11015500.jpg");
+  background-size: cover;
+}
+.text {
+  height: 70%;
+  /* background-color: red; */
+  margin-top: 4rem;
+  padding: 1rem;
+  padding-right: 2.5rem;
+  padding-top: 4rem;
+}
+.text h2 {
+  font-size: 3rem;
+  color: white;
+}
+.text p {
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
+  margin-top: 2rem;
+}
+.text span {
+  font-size: 4rem;
+  color: red;
+}
+.exploreBtn {
+  border: none;
+  background-color: red;
+  height: 4rem;
+  width: 15rem;
+  margin-right: 35rem;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  box-shadow: 0px 1px 5px 2px black;
+}
+.exploreBtn:hover {
+  background-color: maroon;
+}

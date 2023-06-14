@@ -1,0 +1,89 @@
+.accountContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* background-color: white; */
+  /* background-image: url("https://img.freepik.com/premium-photo/education-learning-concept-with-opening-book-textbook-old-library-generative-ai_779468-5832.jpg?w=360"); */
+  background-size: cover;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 60%;
+  padding: 4rem;
+  box-shadow: 3px 4px 3px 4px black;
+  /* color: white; */
+  margin-top: 2rem;
+  height: 13rem;
+  border-radius: 1rem;
+  background-color: wheat;
+}
+.profileIcon {
+  height: 9rem;
+  width: 9rem;
+  border-radius: 50%;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.contactDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.otherInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+  gap: 4rem;
+  width: 100%;
+  padding: 2rem;
+}
+.booksInfo {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 2px 5px 2px black;
+  min-height: 10rem;
+  height: auto;
+  width: 25%;
+  background-color: white;
+  border-radius: 10px;
+  padding: 1rem;
+}
+.membershipInfo {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 2px 5px 2px black;
+  height: 10rem;
+  width: 25%;
+  background-color: white;
+}
+.logoutBtn {
+  margin-top: 2rem;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  height: 3rem;
+  width: 10rem;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-family: georgia;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  cursor: pointer;
+}
+.logoutBtn:hover {
+  background-color: maroon;
+  box-shadow: 0px 1px 5px 2px black;
+}
