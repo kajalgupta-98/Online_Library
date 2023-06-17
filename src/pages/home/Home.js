@@ -1,9 +1,12 @@
 // import Carousel from "../../components/homecarousel/Carousel";
+import { useEffect } from "react";
 import style from "./home.module.css";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+
+  
   const navigate = useNavigate();
   return (
     <div className={style.homeContainer}>

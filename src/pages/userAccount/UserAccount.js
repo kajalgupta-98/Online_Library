@@ -18,10 +18,17 @@ export default function UserAccount() {
   const finishedReadingItems = useRecoilValue(finishedReadingList);
   const setIsUserLoggedIn = useSetRecoilState(userLoginStatus);
   const navigate = useNavigate();
-
+  const user = {...currentUser}
   function handleLogOut() {
-    setIsUserLoggedIn(false);
-    navigate("/login");
+    const confirmation = window.confirm("Do you want to logout?")
+    if (confirmation) {
+      setIsUserLoggedIn(false);
+      const loginStatus = false
+      localStorage.setItem("isUserLoggedIn", JSON.stringify(loginStatus));
+      localStorage.setItem("Current User", JSON.stringify({}));
+      navigate("/login");
+    }
+
   }
   return (
     <div className={style.accountContainer}>
@@ -32,12 +39,14 @@ export default function UserAccount() {
         <div className={style.contactDetails}>
           <h1>{currentUser.name}</h1>
           <h3>{currentUser.email}</h3>
+          {currentUser.isPremiumMember && <h3>{currentUser.planName}</h3>}
+          {currentUser.isPremiumMember && <button className={style.libaraycardBtn} onClick={() => navigate("/my_library_card")}>My Library Card</button>}
         </div>
       </div>
-      <div className={style.otherInfo}>
+      {/* <div className={style.otherInfo}>
         <div className={style.booksInfo}>
           <h3>Books you haven't started reading yet</h3>
-          {yetToStartItems.map((item, index) => (
+          {user.myBookList.yetToStart.map((item, index) => (
             <p key={index}>{item.name}</p>
           ))}
         </div>
@@ -53,7 +62,7 @@ export default function UserAccount() {
             <p key={index}>{item.name}</p>
           ))}
         </div>
-      </div>
+      </div> */}
       <button className={style.logoutBtn} onClick={handleLogOut}>
         Log Out
         <FiLogOut color="white" />

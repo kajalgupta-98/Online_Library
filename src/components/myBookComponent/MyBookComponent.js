@@ -1,6 +1,6 @@
 import style from "./myBookComponent.module.css";
-// import { AiOutlineStar } from "react-icons/ai";
-// import { AiFillStar } from "react-icons/ai";
+import { AiOutlineStar } from "react-icons/ai";
+import { AiFillStar } from "react-icons/ai";
 import { useState } from "react";
 
 export default function MyBookComponent({ item, index }) {
@@ -14,11 +14,11 @@ export default function MyBookComponent({ item, index }) {
         </div>
         <div className={style.star}>
           <p onClick={() => setStarred(!starred)}>
-            {/* {starred ? (
+            {starred ? (
               <AiFillStar size={30} color="rgba(124, 9, 9, 0.801)" />
             ) : (
               <AiOutlineStar size={30} color="rgba(124, 9, 9, 0.801)" />
-            )} */}
+            )}
           </p>
         </div>
       </div>
@@ -26,11 +26,11 @@ export default function MyBookComponent({ item, index }) {
       <div className={style.bottom}>
         <button>Return</button>
         <button>ReIssue</button>
-        <select>
+        {/* <select>
           <option>Yet to start</option>
           <option>Currently reading</option>
           <option>Finished reading</option>
-        </select>
+        </select> */}
       </div>
     </div>
   );

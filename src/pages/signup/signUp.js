@@ -70,26 +70,26 @@ export default function SignUp() {
         <h1>Create a New Account</h1>
         <input
           type="text"
-          placeholder="enter Full Name"
+          placeholder="Enter Full Name"
           onChange={(e) => setFullName(e.target.value)}
           ref={inputRef}
         />
         {errors.fullName && <span>{errors.fullName}</span>}
         <input
           type="text"
-          placeholder="enter Email Id"
+          placeholder="Enter Email Id"
           onChange={(e) => setEmail(e.target.value)}
         />
         {errors.email && <span>{errors.email}</span>}
         <input
           type="password"
-          placeholder="create your password"
+          placeholder="Create your password"
           onChange={(e) => setPassword(e.target.value)}
         />
         {errors.password && <span>{errors.password}</span>}
         <input
           type="password"
-          placeholder="confirm password"
+          placeholder="Confirm password"
           onChange={(e) => setConfirmPassword(e.target.value)}
         />
         {errors.confirmPassword && <span>{errors.confirmPassword}</span>}

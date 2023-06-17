@@ -28,16 +28,22 @@ export default function Login() {
       if (isUserExists) {
         // console.log("user exists");
         setIsUserLoggedIn(true);
-        setCurrentUser({
+        const loginStatus = true
+        localStorage.setItem("isUserLoggedIn", JSON.stringify(loginStatus));
+
+        const store = {
           name: isUserExists.name,
           email: isUserExists.email,
           myBookList: {
             yetToStart: [],
             currentlyReading: [],
             finishedReading: []
-          }
-        });
-        localStorage.setItem("Current User", JSON.stringify(currentUser));
+          },
+          isPremiumMember: false,
+          
+        }
+        setCurrentUser(store);
+        localStorage.setItem("Current User", JSON.stringify(store));
         navigate("/");
       } else {
         console.log("user not found");

@@ -1,4 +1,4 @@
-// import PlanCard from "../../components/plans/PlanCard";
+import PlanCard from "../../components/planCard/PlanCard";
 // import Card from "../../components/card/Card";
 import style from "./membership.module.css";
 
@@ -9,9 +9,9 @@ export default function Membership() {
         Get Your <span>Library Card</span>
       </h1>
       <div className={style.allPlans}>
-        {/* <PlanCard name="plan 1" />
-        <PlanCard name="plan 2" />
-        <PlanCard name="plan 3" /> */}
+        <PlanCard name="The Player" books="5" days="7" fee="250"/>
+        <PlanCard name="The Catharsis Seeker" books="7" days="10" fee="350"/>
+        <PlanCard name="The Binge Reader" books="10" days="14" fee="500"/>
         {/* <Card /> */}
       </div>
     </div>

@@ -11,6 +11,7 @@ import { useRecoilValue } from "recoil";
 import { userLoginStatus } from "./recoil/Atoms";
 import Books from "./pages/books/Books";
 import UserAccount from "./pages/userAccount/UserAccount";
+import LibraryCard from "./components/libararyCard/LibraryCard";
 
 export default function App() {
   const isUserLoggedIn = useRecoilValue(userLoginStatus);
@@ -31,6 +32,7 @@ export default function App() {
           <Route path="/my_books" element={<MyBooks />} />
           <Route path="/get_library_card" element={<Membership />} />
           <Route path="/myaccount" element={<UserAccount />} />
+          <Route path ="/my_library_card" element={<LibraryCard/>}/>
           <Route path="/*" element={<>ERROR</>} />
         </Routes>
       </BrowserRouter>

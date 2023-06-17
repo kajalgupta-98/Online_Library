@@ -2,7 +2,7 @@ import { atom } from "recoil";
 
 const cartData = atom({
   key: "cart data",
-  default: []
+  default: JSON.parse(localStorage.getItem("My Books"))|| []
 });
 
 export const currentlyReadingList = atom({
@@ -20,7 +20,7 @@ export const yetToStartList = atom({
 
 export const userLoginStatus = atom({
   key: " user login status",
-  default: false
+  default: JSON.parse(localStorage.getItem("isUserLoggedIn"))|| false
 });
 export const booksCategoryId = atom({
   key: "book id",
@@ -28,6 +28,6 @@ export const booksCategoryId = atom({
 });
 export const currentUserAtom = atom({
   key: "current user",
-  default: {}
+  default: JSON.parse(localStorage.getItem("Current User"))|| {}
 });
 export default cartData;

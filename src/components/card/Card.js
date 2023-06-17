@@ -1,21 +1,38 @@
-import { useRecoilState, useRecoilValue } from "recoil";
-import cartData, { userLoginStatus } from "../../recoil/Atoms";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
+import cartData, { currentUserAtom, userLoginStatus, yetToStartList } from "../../recoil/Atoms";
 import style from "./card.module.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 export default function Card({ card, index }) {
+  // const book = JSON.parse(localStorage.getItem("My Books"))
   const [isAdded, setIsAdded] = useState(false);
   const [myBookList, setMyBookList] = useRecoilState(cartData);
   const isUserLoggedIn = useRecoilValue(userLoginStatus);
+  const currentUser = useRecoilValue(currentUserAtom)
+  // const setYetToStartItems = useSetRecoilState(yetToStartList)
   const navigate = useNavigate();
+
 
   function handleAddItems(index) {
     if (isUserLoggedIn) {
-      setIsAdded(true);
-      alert(`added ${card.name} to your list`);
-      setMyBookList([...myBookList, card]);
-      console.log(myBookList);
+      if (currentUser.isPremiumMember) {
+        setIsAdded(true);
+        // card.isAdded = true
+        alert(`added ${card.name} to your list`);
+        const store = [...myBookList, card]
+        setMyBookList(store);
+        const holder = {...currentUser}
+        const newList = {...holder.myBookList, yetToStart:[...store]}
+        const updated = {...holder, myBookList: newList}
+        localStorage.setItem("My Books", JSON.stringify(store));
+        localStorage.setItem("Current User", JSON.stringify(updated))
+        console.log(myBookList);
+      } else{
+        alert("Take subscription today to enjoy reading books!")
+        navigate("/get_library_card")
+      }
+
     } else {
       alert("First login to your account");
       navigate("/login");

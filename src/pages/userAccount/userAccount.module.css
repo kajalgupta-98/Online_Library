@@ -6,6 +6,7 @@
   /* background-color: white; */
   /* background-image: url("https://img.freepik.com/premium-photo/education-learning-concept-with-opening-book-textbook-old-library-generative-ai_779468-5832.jpg?w=360"); */
   background-size: cover;
+  height: 100vh;
 }
 
 .profileInfo {
@@ -20,7 +21,7 @@
   margin-top: 2rem;
   height: 13rem;
   border-radius: 1rem;
-  background-color: wheat;
+  /* background-color: wheat; */
 }
 .profileIcon {
   height: 9rem;
@@ -68,7 +69,7 @@
 }
 .logoutBtn {
   margin-top: 2rem;
-  background-color: red;
+  background-color: rgb(235, 31, 31);;
   color: white;
   border: none;
   border-radius: 10px;
@@ -86,4 +87,24 @@
 .logoutBtn:hover {
   background-color: maroon;
   box-shadow: 0px 1px 5px 2px black;
+}
+.libaraycardBtn{
+  background-color:maroon;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  height: 3rem;
+  /* width: 10rem; */
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-family: georgia;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  cursor: pointer;
+}
+.libaraycardBtn:hover{
+  background-color: rgb(235, 31, 31);
+
 }
